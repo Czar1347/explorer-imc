@@ -171,6 +171,6 @@ form button:hover{
     
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-40px);
+    transform: translateY(-30px);
     transition: transform .5s;
 }
