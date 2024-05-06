@@ -1,5 +1,6 @@
 import { Modal } from "./modal.js";
 import { AlertError } from "./alert-erro.js";
+import { notNumber, IMC } from "./utils.js";
 
 // variaveis
 const form = document.querySelector("form");
@@ -18,7 +19,7 @@ form.onsubmit = event => {
     AlertError.open()
     return
   }
-  
+
   AlertError.close()
 
   const result = IMC(weight, height);
@@ -27,12 +28,3 @@ form.onsubmit = event => {
   Modal.open();
   Modal.message.innerHTML = message;
 };
-
-function notNumber(value){
-  return isNaN(value) || value == ''
-}
-
-
-function IMC(weight, height) {
-  return (weight / (height / 100) ** 2).toFixed(1);
-}
